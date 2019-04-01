@@ -14,11 +14,18 @@ void putKanji( int a )
 }
 int main( int argc , char* argv[] )
 {
-	vector<string> tbl;
-
+	string fn = "jistest.txt";
 //	ifstream fi("JIS第一水準漢字.txt");
-	ifstream fi("JIS常用漢字.txt");
-//	ifstream fi("jistest.txt");
+//	ifstream fi("JIS常用漢字.txt");
+	if ( argc == 2 )
+	{
+		fn = string( argv[1] );
+	}
+
+	ifstream fi(fn);
+	
+
+	vector<string> tbl;
 
 	string line;
 	while ( getline( fi, line ) )
